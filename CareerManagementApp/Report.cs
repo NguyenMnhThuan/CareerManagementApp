@@ -15,6 +15,7 @@ namespace CareerManagementApp
         string id = string.Empty;
         string EmpID = string.Empty;
         int ReportID = 0;
+        bool showAll = false;
         public Report(string requestID)
         {
             InitializeComponent();
@@ -27,9 +28,18 @@ namespace CareerManagementApp
             EmpID = empID;
             ReportID = reportID;
         }
+        public Report(string requestID, string empID, int reportID, bool showAll)
+        {
+            InitializeComponent();
+            this.id = requestID;
+            EmpID = empID;
+            ReportID = reportID;
+            this.showAll = showAll; 
+        }
 
         private void Report_Load(object sender, EventArgs e)
         {
+            Fix_btn.Hide();
             BackColor = Color.White;
             BackgroundImage = FormDesign.CreateRainbowBackground(Width, Height);
             BackgroundImageLayout = ImageLayout.Stretch;
@@ -49,12 +59,19 @@ namespace CareerManagementApp
             //実際データから取得”WHERE REPORT_ID = @ReportID”
             reportName_tb.ForeColor = SystemColors.WindowText;
             reportName_tb.Text = id;
-            if (!EmpID.Equals(string.Empty) && ReportID != 0)
+            if (!EmpID.Equals(string.Empty) || ReportID != 0)
             {
                 EmpName_tb.ForeColor = SystemColors.WindowText;
                 EmpName_tb.Text = EmpID;
                 label7.Text = "面談報告書編集";
                 Register_btn.Text = "編集";
+                if (showAll == true)
+                {
+                    label7.Text = "面談報告書詳細";
+                    Register_btn.Hide();
+                    Fix_btn.Show();
+                    Register_btn.Text = "確定";
+                }
             }
         }
 
@@ -65,7 +82,16 @@ namespace CareerManagementApp
 
         private void Register_btn_Click(object sender, EventArgs e)
         {
+            label7.Text = "面談報告書詳細";
+            Register_btn.Hide();
+            Fix_btn.Show();
+        }
 
+        private void Fix_btn_Click(object sender, EventArgs e)
+        {
+            label7.Text = "面談報告書編集";
+            Fix_btn.Hide();
+            Register_btn.Show();
         }
     }
 }

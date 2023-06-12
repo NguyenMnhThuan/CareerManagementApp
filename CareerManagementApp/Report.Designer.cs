@@ -52,6 +52,7 @@
             this.Back_btn = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.Register_btn = new System.Windows.Forms.Button();
+            this.Fix_btn = new System.Windows.Forms.Button();
             this.tableLayoutPanel10.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -306,11 +307,25 @@
             this.Register_btn.UseVisualStyleBackColor = false;
             this.Register_btn.Click += new System.EventHandler(this.Register_btn_Click);
             // 
+            // Fix_btn
+            // 
+            this.Fix_btn.BackColor = System.Drawing.Color.SteelBlue;
+            this.Fix_btn.Font = new System.Drawing.Font("MS UI Gothic", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.Fix_btn.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.Fix_btn.Location = new System.Drawing.Point(1284, 62);
+            this.Fix_btn.Name = "Fix_btn";
+            this.Fix_btn.Size = new System.Drawing.Size(83, 60);
+            this.Fix_btn.TabIndex = 18;
+            this.Fix_btn.Text = "編集";
+            this.Fix_btn.UseVisualStyleBackColor = false;
+            this.Fix_btn.Click += new System.EventHandler(this.Fix_btn_Click);
+            // 
             // Report
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1370, 749);
+            this.Controls.Add(this.Fix_btn);
             this.Controls.Add(this.Register_btn);
             this.Controls.Add(this.tableLayoutPanel10);
             this.Controls.Add(this.Remarks_tb);
@@ -370,5 +385,6 @@
         private System.Windows.Forms.Button Back_btn;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button Register_btn;
+        private System.Windows.Forms.Button Fix_btn;
     }
 }

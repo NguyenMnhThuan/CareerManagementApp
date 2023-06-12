@@ -397,7 +397,7 @@
             this.MaximizeBox = false;
             this.Name = "PersonalRegisterUpdate";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "個人情報登録編集画面";
+            this.Text = "個人情報編集画面";
             this.Load += new System.EventHandler(this.PersonalRegisterUpdate_Load);
             this.tableLayoutPanel10.ResumeLayout(false);
             this.tableLayoutPanel10.PerformLayout();

@@ -48,6 +48,7 @@ namespace CareerManagementApp
             if (showAll == true)
             {
                 label2.Text = "全面談報告";
+                Update_btn.Text = "詳細";
             }
             else if (!EmpID.Equals(string.Empty))
             {
@@ -98,11 +99,22 @@ namespace CareerManagementApp
         {
             if (ReportID != 0)
             {
-                Report report = new Report(id, EmpID, ReportID);
-                report.ShowDialog();
-                this.Hide();
-                ReportID = 0;
-                this.Show();
+                if (showAll == true)
+                {
+                    Report report = new Report(id, EmpID, ReportID, showAll);
+                    report.ShowDialog();
+                    this.Hide();
+                    ReportID = 0;
+                    this.Show();
+                }
+                else
+                {
+                    Report report = new Report(id, EmpID, ReportID);
+                    report.ShowDialog();
+                    this.Hide();
+                    ReportID = 0;
+                    this.Show();
+                }
             }
             else
             {

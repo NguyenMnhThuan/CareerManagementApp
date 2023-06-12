@@ -28,23 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Career_dgv = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.Languages = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.Tools = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.Export_btn = new System.Windows.Forms.Button();
             this.Fix_btn = new System.Windows.Forms.Button();
@@ -98,6 +88,16 @@
             this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
             this.label12 = new System.Windows.Forms.Label();
             this.Back_btn = new System.Windows.Forms.Button();
+            this.作業名 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.内容 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.参加 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.機種 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.OS = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.言語 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.DBネットワークツール等 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.開始日終了日期間 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.規模体制 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.備考 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.Career_dgv)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -114,42 +114,42 @@
             // 
             // Career_dgv
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Silver;
-            this.Career_dgv.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.Silver;
+            this.Career_dgv.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.Career_dgv.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Career_dgv.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.Career_dgv.BackgroundColor = System.Drawing.Color.White;
             this.Career_dgv.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Gainsboro;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Career_dgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Career_dgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.Career_dgv.ColumnHeadersHeight = 55;
             this.Career_dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.Career_dgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column5,
-            this.Languages,
-            this.Tools,
-            this.Column8,
-            this.Column9,
-            this.Column10});
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("MS UI Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.Career_dgv.DefaultCellStyle = dataGridViewCellStyle4;
+            this.作業名,
+            this.内容,
+            this.参加,
+            this.機種,
+            this.OS,
+            this.言語,
+            this.DBネットワークツール等,
+            this.開始日終了日期間,
+            this.規模体制,
+            this.備考});
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("MS UI Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.Career_dgv.DefaultCellStyle = dataGridViewCellStyle10;
             this.Career_dgv.EnableHeadersVisualStyles = false;
             this.Career_dgv.GridColor = System.Drawing.Color.Gray;
             this.Career_dgv.Location = new System.Drawing.Point(11, 356);
@@ -157,116 +157,24 @@
             this.Career_dgv.MultiSelect = false;
             this.Career_dgv.Name = "Career_dgv";
             this.Career_dgv.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Career_dgv.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Career_dgv.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.Career_dgv.RowHeadersVisible = false;
             this.Career_dgv.RowHeadersWidth = 50;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.Career_dgv.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.Career_dgv.RowsDefaultCellStyle = dataGridViewCellStyle12;
             this.Career_dgv.RowTemplate.Height = 24;
             this.Career_dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.Career_dgv.Size = new System.Drawing.Size(1210, 267);
             this.Career_dgv.TabIndex = 5;
             this.Career_dgv.SelectionChanged += new System.EventHandler(this.Career_dgv_SelectionChanged);
-            // 
-            // Column1
-            // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Gainsboro;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.Column1.DefaultCellStyle = dataGridViewCellStyle3;
-            this.Column1.HeaderText = "作業名";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Column1.Width = 122;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "内容";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Column2.Width = 75;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "参加";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            this.Column3.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Column3.Width = 75;
-            // 
-            // Column4
-            // 
-            this.Column4.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
-            this.Column4.HeaderText = "機種";
-            this.Column4.MinimumWidth = 6;
-            this.Column4.Name = "Column4";
-            this.Column4.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Column4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Column4.Width = 121;
-            // 
-            // Column5
-            // 
-            this.Column5.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
-            this.Column5.HeaderText = "OS";
-            this.Column5.MinimumWidth = 6;
-            this.Column5.Name = "Column5";
-            this.Column5.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Column5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Column5.Width = 121;
-            // 
-            // Languages
-            // 
-            this.Languages.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
-            this.Languages.HeaderText = "言語";
-            this.Languages.MinimumWidth = 6;
-            this.Languages.Name = "Languages";
-            this.Languages.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Languages.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Languages.Width = 120;
-            // 
-            // Tools
-            // 
-            this.Tools.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
-            this.Tools.HeaderText = "DB ネットワーク ツール等";
-            this.Tools.MinimumWidth = 6;
-            this.Tools.Name = "Tools";
-            this.Tools.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Tools.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Tools.Width = 180;
-            // 
-            // Column8
-            // 
-            this.Column8.HeaderText = "開始日 終了日 期間";
-            this.Column8.MinimumWidth = 6;
-            this.Column8.Name = "Column8";
-            this.Column8.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Column8.Width = 190;
-            // 
-            // Column9
-            // 
-            this.Column9.HeaderText = "規模 体制";
-            this.Column9.MinimumWidth = 6;
-            this.Column9.Name = "Column9";
-            this.Column9.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Column9.Width = 90;
-            // 
-            // Column10
-            // 
-            this.Column10.HeaderText = "備考";
-            this.Column10.MinimumWidth = 6;
-            this.Column10.Name = "Column10";
-            this.Column10.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Column10.Width = 115;
             // 
             // panel1
             // 
@@ -492,7 +400,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(116, 29);
             this.label1.TabIndex = 0;
-            this.label1.Text = "フルガナ";
+            this.label1.Text = "フリガナ";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tableLayoutPanel2
@@ -1003,6 +911,98 @@
             this.Back_btn.UseVisualStyleBackColor = false;
             this.Back_btn.Click += new System.EventHandler(this.Back_btn_Click);
             // 
+            // 作業名
+            // 
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.作業名.DefaultCellStyle = dataGridViewCellStyle9;
+            this.作業名.HeaderText = "作業名";
+            this.作業名.MinimumWidth = 6;
+            this.作業名.Name = "作業名";
+            this.作業名.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.作業名.Width = 122;
+            // 
+            // 内容
+            // 
+            this.内容.HeaderText = "内容";
+            this.内容.MinimumWidth = 6;
+            this.内容.Name = "内容";
+            this.内容.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.内容.Width = 75;
+            // 
+            // 参加
+            // 
+            this.参加.HeaderText = "参加";
+            this.参加.MinimumWidth = 6;
+            this.参加.Name = "参加";
+            this.参加.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.参加.Width = 75;
+            // 
+            // 機種
+            // 
+            this.機種.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
+            this.機種.HeaderText = "機種";
+            this.機種.MinimumWidth = 6;
+            this.機種.Name = "機種";
+            this.機種.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.機種.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.機種.Width = 121;
+            // 
+            // OS
+            // 
+            this.OS.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
+            this.OS.HeaderText = "OS";
+            this.OS.MinimumWidth = 6;
+            this.OS.Name = "OS";
+            this.OS.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.OS.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.OS.Width = 121;
+            // 
+            // 言語
+            // 
+            this.言語.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
+            this.言語.HeaderText = "言語";
+            this.言語.MinimumWidth = 6;
+            this.言語.Name = "言語";
+            this.言語.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.言語.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.言語.Width = 120;
+            // 
+            // DBネットワークツール等
+            // 
+            this.DBネットワークツール等.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
+            this.DBネットワークツール等.HeaderText = "DBネットワークツール等";
+            this.DBネットワークツール等.MinimumWidth = 6;
+            this.DBネットワークツール等.Name = "DBネットワークツール等";
+            this.DBネットワークツール等.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.DBネットワークツール等.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.DBネットワークツール等.Width = 180;
+            // 
+            // 開始日終了日期間
+            // 
+            this.開始日終了日期間.HeaderText = "開始日終了日期間";
+            this.開始日終了日期間.MinimumWidth = 6;
+            this.開始日終了日期間.Name = "開始日終了日期間";
+            this.開始日終了日期間.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.開始日終了日期間.Width = 190;
+            // 
+            // 規模体制
+            // 
+            this.規模体制.HeaderText = "規模体制";
+            this.規模体制.MinimumWidth = 6;
+            this.規模体制.Name = "規模体制";
+            this.規模体制.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.規模体制.Width = 90;
+            // 
+            // 備考
+            // 
+            this.備考.HeaderText = "備考";
+            this.備考.MinimumWidth = 6;
+            this.備考.Name = "備考";
+            this.備考.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.備考.Width = 115;
+            // 
             // PersonalCareer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -1054,16 +1054,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView Career_dgv;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewComboBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewComboBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewComboBoxColumn Languages;
-        private System.Windows.Forms.DataGridViewComboBoxColumn Tools;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button Export_btn;
         private System.Windows.Forms.Button Fix_btn;
@@ -1117,5 +1107,15 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel10;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button Back_btn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 作業名;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 内容;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 参加;
+        private System.Windows.Forms.DataGridViewComboBoxColumn 機種;
+        private System.Windows.Forms.DataGridViewComboBoxColumn OS;
+        private System.Windows.Forms.DataGridViewComboBoxColumn 言語;
+        private System.Windows.Forms.DataGridViewComboBoxColumn DBネットワークツール等;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 開始日終了日期間;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 規模体制;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 備考;
     }
 }

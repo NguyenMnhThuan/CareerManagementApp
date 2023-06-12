@@ -18,6 +18,7 @@ namespace CareerManagementApp
         string author = string.Empty;
         string newFilePath = string.Empty;
         string CareerName = string.Empty;
+        public static string connectString = ConnectString.connectString;
         public PersonalCareer(string requestID, string authority)
         {
             InitializeComponent();
@@ -34,6 +35,7 @@ namespace CareerManagementApp
 
         private void PersonalCareer_Load(object sender, EventArgs e)
         {
+            LoadCareerData();
             BackColor = Color.White;
             BackgroundImage = FormDesign.CreateRainbowBackground(Width, Height);
             BackgroundImageLayout = ImageLayout.Stretch;
@@ -58,47 +60,128 @@ namespace CareerManagementApp
         }
         private void LoadCareerData()
         {
-            // Kết nối đến cơ sở dữ liệu SQL Server
-            SqlConnection connection = new SqlConnection("connectionString");
-            connection.Open();
-
-            // Tạo câu truy vấn SQL để lấy dữ liệu từ bảng Career và Skill
-            string query = "SELECT c.作業名, c.内容, c.参加, c.開始日 + ' - ' + c.終了日 + ' (' + c.期間 + ')' AS 開始日_終了日_期間, c.規模 + ' ' + c.体制 AS 規模_体制, c.感想, s.機種, s.OS, s.言語, s.ツール等 " +
-                           "FROM Career c " +
-                           "JOIN Skill s ON c.ID = s.CareerID";
-
-            // Thực hiện câu truy vấn và lấy dữ liệu vào DataTable
-            DataTable dataTable = new DataTable();
-            SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
-            adapter.Fill(dataTable);
-
-            // Gán DataTable làm nguồn dữ liệu cho DataGridView
-            Career_dgv.DataSource = dataTable;
-
-            // Cập nhật giá trị cho các cột ComboBox
-            foreach (DataGridViewRow row in Career_dgv.Rows)
+            using (SqlConnection connection = new SqlConnection(connectString))
             {
-                // Cột 機種
-                DataGridViewComboBoxCell machineCell = (DataGridViewComboBoxCell)row.Cells["機種"];
-                machineCell.DataSource = GetDistinctValues(dataTable, "機種");
+                try
+                {
+                    connection.Open();
 
-                // Cột OS
-                DataGridViewComboBoxCell osCell = (DataGridViewComboBoxCell)row.Cells["OS"];
-                osCell.DataSource = GetDistinctValues(dataTable, "OS");
+                    string query = "SELECT c.CAREER_NAME AS '作業名', c.DETAILS AS '内容', c.ENTRY AS '参加'," +
+                                   "CONVERT(varchar, c.START_DATE, 111) + ' - ' + CONVERT(varchar, c.END_DATE, 111) + ' (' + c.PERIOD + ')' AS '開始日終了日期間', " +
+                                   "c.REGINE + ' ' + c.SCALE AS '規模体制', " +
+                                   "c.REMARKS AS '備考' " +
+                                   "FROM CAREER c " +
+                                   "WHERE c.EMPLOYEE_ID = @EmpID";
 
-                // Cột 言語
-                DataGridViewComboBoxCell languageCell = (DataGridViewComboBoxCell)row.Cells["言語"];
-                languageCell.DataSource = GetDistinctValues(dataTable, "言語");
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@EmpID", "Emp001");
 
-                // Cột ツール等
-                DataGridViewComboBoxCell toolCell = (DataGridViewComboBoxCell)row.Cells["ツール等"];
-                toolCell.DataSource = GetDistinctValues(dataTable, "ツール等");
+                        DataTable dataTable = new DataTable();
+                        SqlDataAdapter adapter = new SqlDataAdapter(command);
+                        adapter.Fill(dataTable);
+
+                        Career_dgv.Rows.Clear(); // データをクリア
+
+                        // データを表示
+                        foreach (DataRow row in dataTable.Rows)
+                        {
+                            int rowIndex = Career_dgv.Rows.Add();
+
+                            // DataGridViewの各セルに値を設定
+                            Career_dgv.Rows[rowIndex].Cells["作業名"].Value = row["作業名"];
+                            Career_dgv.Rows[rowIndex].Cells["内容"].Value = row["内容"];
+                            Career_dgv.Rows[rowIndex].Cells["参加"].Value = row["参加"];
+                            Career_dgv.Rows[rowIndex].Cells["開始日終了日期間"].Value = row["開始日終了日期間"];
+                            Career_dgv.Rows[rowIndex].Cells["規模体制"].Value = row["規模体制"];
+                            Career_dgv.Rows[rowIndex].Cells["備考"].Value = row["備考"];
+                        }
+                    }
+
+                    // ComboBox列に値を割り当て
+                    AssignComboBoxValues();
+                }
+                catch (SqlException ex)
+                {
+                    MessageClass.MSError2(ex);
+                }
+                finally
+                {
+                    connection.Close();
+                }
             }
-
-            // Đóng kết nối đến cơ sở dữ liệu
-            connection.Close();
-
         }
+
+        private void AssignComboBoxValues()
+        {
+            using (SqlConnection connection = new SqlConnection(connectString))
+            {
+                try
+                {
+                    connection.Open();
+
+                    string query = "SELECT c.CAREER_NAME AS '作業名', " +
+                                   "s.MODEL_ID AS '機種', " +
+                                   "s.OS_ID AS 'OS', " +
+                                   "s.PG_LANGUAGES_ID AS '言語', " +
+                                   "s.TOOL_ETC_ID AS 'DBネットワークツール等' " +
+                                   "FROM CAREER c " +
+                                   "JOIN TECHNOLOGY s ON c.CAREER_ID = s.CAREER_ID " +
+                                   "WHERE c.EMPLOYEE_ID = @EmpID";
+
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@EmpID", "Emp001");
+
+                        DataTable dataTable = new DataTable();
+                        SqlDataAdapter adapter = new SqlDataAdapter(command);
+                        adapter.Fill(dataTable);
+
+                        // ComboBox列に値を割り当て
+                        DataGridViewComboBoxColumn machineColumn = (DataGridViewComboBoxColumn)Career_dgv.Columns["機種"];
+                        DataGridViewComboBoxColumn osColumn = (DataGridViewComboBoxColumn)Career_dgv.Columns["OS"];
+                        DataGridViewComboBoxColumn languageColumn = (DataGridViewComboBoxColumn)Career_dgv.Columns["言語"];
+                        DataGridViewComboBoxColumn toolColumn = (DataGridViewComboBoxColumn)Career_dgv.Columns["DBネットワークツール等"];
+
+                        machineColumn.Items.Clear();
+                        osColumn.Items.Clear();
+                        languageColumn.Items.Clear();
+                        toolColumn.Items.Clear();
+
+                        foreach (DataRow row in dataTable.Rows)
+                        {
+                            string machineValue = row["機種"].ToString();
+                            string osValue = row["OS"].ToString();
+                            string languageValue = row["言語"].ToString();
+                            string toolValue = row["DBネットワークツール等"].ToString();
+
+                            if (!machineColumn.Items.Contains(machineValue))
+                                machineColumn.Items.Add(machineValue);
+
+                            if (!osColumn.Items.Contains(osValue))
+                                osColumn.Items.Add(osValue);
+
+                            if (!languageColumn.Items.Contains(languageValue))
+                                languageColumn.Items.Add(languageValue);
+
+                            if (!toolColumn.Items.Contains(toolValue))
+                                toolColumn.Items.Add(toolValue);
+                        }
+                    }
+                }
+                catch (SqlException ex)
+                {
+                    MessageClass.MSError2(ex);
+                }
+                finally
+                {
+                    connection.Close();
+                }
+            }
+        }
+
+
+
 
         private List<string> GetDistinctValues(DataTable dataTable, string columnName)
         {
