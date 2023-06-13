@@ -38,7 +38,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.Export_btn = new System.Windows.Forms.Button();
             this.Fix_btn = new System.Windows.Forms.Button();
-            this.Delete_btn = new System.Windows.Forms.Button();
             this.Update_btn = new System.Windows.Forms.Button();
             this.Register_btn = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -81,23 +80,23 @@
             this.school1_lb = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
-            this.diploma3_lb = new System.Windows.Forms.Label();
-            this.diploma1_lb = new System.Windows.Forms.Label();
-            this.diploma4_lb = new System.Windows.Forms.Label();
-            this.diploma2_lb = new System.Windows.Forms.Label();
             this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
             this.label12 = new System.Windows.Forms.Label();
             this.Back_btn = new System.Windows.Forms.Button();
             this.作業名 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.内容 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.参加 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.機種 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.OS = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.言語 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.DBネットワークツール等 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.機種 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.OS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.言語 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DBネットワークツール等 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.開始日終了日期間 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.規模体制 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.備考 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.diploma1_cb = new System.Windows.Forms.ComboBox();
+            this.diploma4_cb = new System.Windows.Forms.ComboBox();
+            this.diploma2_cb = new System.Windows.Forms.ComboBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.Career_dgv)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -152,7 +151,7 @@
             this.Career_dgv.DefaultCellStyle = dataGridViewCellStyle10;
             this.Career_dgv.EnableHeadersVisualStyles = false;
             this.Career_dgv.GridColor = System.Drawing.Color.Gray;
-            this.Career_dgv.Location = new System.Drawing.Point(11, 356);
+            this.Career_dgv.Location = new System.Drawing.Point(11, 372);
             this.Career_dgv.Margin = new System.Windows.Forms.Padding(2);
             this.Career_dgv.MultiSelect = false;
             this.Career_dgv.Name = "Career_dgv";
@@ -172,8 +171,9 @@
             this.Career_dgv.RowsDefaultCellStyle = dataGridViewCellStyle12;
             this.Career_dgv.RowTemplate.Height = 24;
             this.Career_dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.Career_dgv.Size = new System.Drawing.Size(1210, 267);
+            this.Career_dgv.Size = new System.Drawing.Size(1210, 249);
             this.Career_dgv.TabIndex = 5;
+            this.Career_dgv.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Career_dgv_CellContentClick);
             this.Career_dgv.SelectionChanged += new System.EventHandler(this.Career_dgv_SelectionChanged);
             // 
             // panel1
@@ -181,7 +181,6 @@
             this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.Controls.Add(this.Export_btn);
             this.panel1.Controls.Add(this.Fix_btn);
-            this.panel1.Controls.Add(this.Delete_btn);
             this.panel1.Controls.Add(this.Update_btn);
             this.panel1.Controls.Add(this.Register_btn);
             this.panel1.Location = new System.Drawing.Point(1242, 43);
@@ -214,19 +213,6 @@
             this.Fix_btn.Text = "修正";
             this.Fix_btn.UseVisualStyleBackColor = false;
             this.Fix_btn.Click += new System.EventHandler(this.Fix_btn_Click);
-            // 
-            // Delete_btn
-            // 
-            this.Delete_btn.BackColor = System.Drawing.Color.SteelBlue;
-            this.Delete_btn.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.Delete_btn.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.Delete_btn.Location = new System.Drawing.Point(3, 472);
-            this.Delete_btn.Name = "Delete_btn";
-            this.Delete_btn.Size = new System.Drawing.Size(106, 53);
-            this.Delete_btn.TabIndex = 3;
-            this.Delete_btn.Text = "削除";
-            this.Delete_btn.UseVisualStyleBackColor = false;
-            this.Delete_btn.Click += new System.EventHandler(this.Delete_btn_Click);
             // 
             // Update_btn
             // 
@@ -261,7 +247,7 @@
             this.panel2.Controls.Add(this.textBox1);
             this.panel2.Controls.Add(this.textBox2);
             this.panel2.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.panel2.Location = new System.Drawing.Point(12, 624);
+            this.panel2.Location = new System.Drawing.Point(12, 622);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1209, 113);
             this.panel2.TabIndex = 8;
@@ -322,13 +308,13 @@
             this.tableLayoutPanel1.Location = new System.Drawing.Point(11, 45);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 6;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.646302F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.791F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.646302F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 34.0836F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.25723F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.61093F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(124, 312);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.174312F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.06728F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.174312F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 32.4159F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 24.15902F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.09174F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(124, 328);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // label6
@@ -336,9 +322,9 @@
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Gainsboro;
             this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label6.Location = new System.Drawing.Point(4, 275);
+            this.label6.Location = new System.Drawing.Point(4, 292);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(116, 36);
+            this.label6.Size = new System.Drawing.Size(116, 35);
             this.label6.TabIndex = 5;
             this.label6.Text = "特記";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -348,9 +334,9 @@
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Gainsboro;
             this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label5.Location = new System.Drawing.Point(4, 212);
+            this.label5.Location = new System.Drawing.Point(4, 213);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(116, 62);
+            this.label5.Size = new System.Drawing.Size(116, 78);
             this.label5.TabIndex = 4;
             this.label5.Text = "資格等";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -362,7 +348,7 @@
             this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label4.Location = new System.Drawing.Point(4, 107);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(116, 104);
+            this.label4.Size = new System.Drawing.Size(116, 105);
             this.label4.TabIndex = 3;
             this.label4.Text = "学歴";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -561,7 +547,7 @@
             this.tableLayoutPanel5.ColumnCount = 1;
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel5.Controls.Add(this.remarks_lb, 0, 0);
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(134, 320);
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(134, 337);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 1;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -800,70 +786,18 @@
             this.tableLayoutPanel8.ColumnCount = 2;
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel8.Controls.Add(this.diploma3_lb, 0, 1);
-            this.tableLayoutPanel8.Controls.Add(this.diploma1_lb, 0, 0);
-            this.tableLayoutPanel8.Controls.Add(this.diploma4_lb, 0, 1);
-            this.tableLayoutPanel8.Controls.Add(this.diploma2_lb, 1, 0);
+            this.tableLayoutPanel8.Controls.Add(this.diploma2_cb, 0, 1);
+            this.tableLayoutPanel8.Controls.Add(this.diploma4_cb, 0, 1);
+            this.tableLayoutPanel8.Controls.Add(this.diploma1_cb, 0, 0);
+            this.tableLayoutPanel8.Controls.Add(this.comboBox1, 1, 0);
             this.tableLayoutPanel8.Location = new System.Drawing.Point(134, 257);
             this.tableLayoutPanel8.Name = "tableLayoutPanel8";
             this.tableLayoutPanel8.RowCount = 2;
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel8.Size = new System.Drawing.Size(1087, 64);
+            this.tableLayoutPanel8.Size = new System.Drawing.Size(1087, 82);
             this.tableLayoutPanel8.TabIndex = 16;
-            // 
-            // diploma3_lb
-            // 
-            this.diploma3_lb.AutoSize = true;
-            this.diploma3_lb.BackColor = System.Drawing.Color.White;
-            this.diploma3_lb.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.diploma3_lb.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.diploma3_lb.ForeColor = System.Drawing.Color.DimGray;
-            this.diploma3_lb.Location = new System.Drawing.Point(4, 32);
-            this.diploma3_lb.Name = "diploma3_lb";
-            this.diploma3_lb.Size = new System.Drawing.Size(536, 31);
-            this.diploma3_lb.TabIndex = 2;
-            this.diploma3_lb.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // diploma1_lb
-            // 
-            this.diploma1_lb.AutoSize = true;
-            this.diploma1_lb.BackColor = System.Drawing.Color.White;
-            this.diploma1_lb.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.diploma1_lb.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.diploma1_lb.ForeColor = System.Drawing.Color.DimGray;
-            this.diploma1_lb.Location = new System.Drawing.Point(4, 1);
-            this.diploma1_lb.Name = "diploma1_lb";
-            this.diploma1_lb.Size = new System.Drawing.Size(536, 30);
-            this.diploma1_lb.TabIndex = 0;
-            this.diploma1_lb.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // diploma4_lb
-            // 
-            this.diploma4_lb.AutoSize = true;
-            this.diploma4_lb.BackColor = System.Drawing.Color.White;
-            this.diploma4_lb.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.diploma4_lb.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.diploma4_lb.ForeColor = System.Drawing.Color.DimGray;
-            this.diploma4_lb.Location = new System.Drawing.Point(547, 32);
-            this.diploma4_lb.Name = "diploma4_lb";
-            this.diploma4_lb.Size = new System.Drawing.Size(536, 31);
-            this.diploma4_lb.TabIndex = 1;
-            this.diploma4_lb.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // diploma2_lb
-            // 
-            this.diploma2_lb.AutoSize = true;
-            this.diploma2_lb.BackColor = System.Drawing.Color.White;
-            this.diploma2_lb.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.diploma2_lb.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.diploma2_lb.ForeColor = System.Drawing.Color.DimGray;
-            this.diploma2_lb.Location = new System.Drawing.Point(547, 1);
-            this.diploma2_lb.Name = "diploma2_lb";
-            this.diploma2_lb.Size = new System.Drawing.Size(536, 30);
-            this.diploma2_lb.TabIndex = 3;
-            this.diploma2_lb.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tableLayoutPanel10
             // 
@@ -941,42 +875,34 @@
             // 
             // 機種
             // 
-            this.機種.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
             this.機種.HeaderText = "機種";
             this.機種.MinimumWidth = 6;
             this.機種.Name = "機種";
             this.機種.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.機種.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.機種.Width = 121;
             // 
             // OS
             // 
-            this.OS.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
             this.OS.HeaderText = "OS";
             this.OS.MinimumWidth = 6;
             this.OS.Name = "OS";
             this.OS.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.OS.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.OS.Width = 121;
             // 
             // 言語
             // 
-            this.言語.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
             this.言語.HeaderText = "言語";
             this.言語.MinimumWidth = 6;
             this.言語.Name = "言語";
             this.言語.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.言語.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.言語.Width = 120;
             // 
             // DBネットワークツール等
             // 
-            this.DBネットワークツール等.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
             this.DBネットワークツール等.HeaderText = "DBネットワークツール等";
             this.DBネットワークツール等.MinimumWidth = 6;
             this.DBネットワークツール等.Name = "DBネットワークツール等";
             this.DBネットワークツール等.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.DBネットワークツール等.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.DBネットワークツール等.Width = 180;
             // 
             // 開始日終了日期間
@@ -1002,6 +928,48 @@
             this.備考.Name = "備考";
             this.備考.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.備考.Width = 115;
+            // 
+            // diploma1_cb
+            // 
+            this.diploma1_cb.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.diploma1_cb.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.diploma1_cb.ForeColor = System.Drawing.Color.DimGray;
+            this.diploma1_cb.FormattingEnabled = true;
+            this.diploma1_cb.Location = new System.Drawing.Point(4, 4);
+            this.diploma1_cb.Name = "diploma1_cb";
+            this.diploma1_cb.Size = new System.Drawing.Size(536, 32);
+            this.diploma1_cb.TabIndex = 6;
+            // 
+            // diploma4_cb
+            // 
+            this.diploma4_cb.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.diploma4_cb.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.diploma4_cb.ForeColor = System.Drawing.Color.DimGray;
+            this.diploma4_cb.FormattingEnabled = true;
+            this.diploma4_cb.Location = new System.Drawing.Point(547, 44);
+            this.diploma4_cb.Name = "diploma4_cb";
+            this.diploma4_cb.Size = new System.Drawing.Size(536, 32);
+            this.diploma4_cb.TabIndex = 7;
+            // 
+            // diploma2_cb
+            // 
+            this.diploma2_cb.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.diploma2_cb.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.diploma2_cb.ForeColor = System.Drawing.Color.DimGray;
+            this.diploma2_cb.FormattingEnabled = true;
+            this.diploma2_cb.Location = new System.Drawing.Point(4, 44);
+            this.diploma2_cb.Name = "diploma2_cb";
+            this.diploma2_cb.Size = new System.Drawing.Size(536, 32);
+            this.diploma2_cb.TabIndex = 8;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(547, 4);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(536, 32);
+            this.comboBox1.TabIndex = 9;
             // 
             // PersonalCareer
             // 
@@ -1044,7 +1012,6 @@
             this.tableLayoutPanel7.ResumeLayout(false);
             this.tableLayoutPanel7.PerformLayout();
             this.tableLayoutPanel8.ResumeLayout(false);
-            this.tableLayoutPanel8.PerformLayout();
             this.tableLayoutPanel10.ResumeLayout(false);
             this.tableLayoutPanel10.PerformLayout();
             this.ResumeLayout(false);
@@ -1057,7 +1024,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button Export_btn;
         private System.Windows.Forms.Button Fix_btn;
-        private System.Windows.Forms.Button Delete_btn;
         private System.Windows.Forms.Button Update_btn;
         private System.Windows.Forms.Button Register_btn;
         private System.Windows.Forms.Panel panel2;
@@ -1100,22 +1066,22 @@
         private System.Windows.Forms.Label school1_lb;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel8;
-        private System.Windows.Forms.Label diploma3_lb;
-        private System.Windows.Forms.Label diploma1_lb;
-        private System.Windows.Forms.Label diploma4_lb;
-        private System.Windows.Forms.Label diploma2_lb;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel10;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button Back_btn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 作業名;
         private System.Windows.Forms.DataGridViewTextBoxColumn 内容;
         private System.Windows.Forms.DataGridViewTextBoxColumn 参加;
-        private System.Windows.Forms.DataGridViewComboBoxColumn 機種;
-        private System.Windows.Forms.DataGridViewComboBoxColumn OS;
-        private System.Windows.Forms.DataGridViewComboBoxColumn 言語;
-        private System.Windows.Forms.DataGridViewComboBoxColumn DBネットワークツール等;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 機種;
+        private System.Windows.Forms.DataGridViewTextBoxColumn OS;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 言語;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DBネットワークツール等;
         private System.Windows.Forms.DataGridViewTextBoxColumn 開始日終了日期間;
         private System.Windows.Forms.DataGridViewTextBoxColumn 規模体制;
         private System.Windows.Forms.DataGridViewTextBoxColumn 備考;
+        private System.Windows.Forms.ComboBox diploma2_cb;
+        private System.Windows.Forms.ComboBox diploma4_cb;
+        private System.Windows.Forms.ComboBox diploma1_cb;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

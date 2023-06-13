@@ -2,10 +2,12 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Runtime.Remoting.Lifetime;
 using System.Text;
@@ -17,7 +19,8 @@ namespace CareerManagementApp
 {
     public partial class Login : Form
     {
-        public static string connectString = ConnectString.connectString;
+        private const int margin = 10;
+        public static string connectString = ConfigurationManager.AppSettings["SqlServerAddress"];
         public Login()
         {
             InitializeComponent();
@@ -26,6 +29,8 @@ namespace CareerManagementApp
 
         private void Login_Load(object sender, EventArgs e)
         {
+
+
             BackColor = Color.White;
             BackgroundImage = FormDesign.CreateRainbowBackground(Width,Height);
             BackgroundImageLayout = ImageLayout.Stretch;

@@ -53,6 +53,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.Register_btn = new System.Windows.Forms.Button();
             this.Fix_btn = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.tableLayoutPanel10.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -320,11 +321,24 @@
             this.Fix_btn.UseVisualStyleBackColor = false;
             this.Fix_btn.Click += new System.EventHandler(this.Fix_btn_Click);
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.button1.Font = new System.Drawing.Font("MS UI Gothic", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.button1.ForeColor = System.Drawing.Color.Red;
+            this.button1.Location = new System.Drawing.Point(1284, 128);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(83, 55);
+            this.button1.TabIndex = 60;
+            this.button1.Text = "削除";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
             // Report
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1370, 749);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.Fix_btn);
             this.Controls.Add(this.Register_btn);
             this.Controls.Add(this.tableLayoutPanel10);
@@ -386,5 +400,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button Register_btn;
         private System.Windows.Forms.Button Fix_btn;
+        private System.Windows.Forms.Button button1;
     }
 }

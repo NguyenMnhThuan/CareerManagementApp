@@ -36,6 +36,7 @@
             this.Password_tb = new System.Windows.Forms.TextBox();
             this.Back_btn = new System.Windows.Forms.Button();
             this.OK_btn = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -131,11 +132,24 @@
             this.OK_btn.UseVisualStyleBackColor = false;
             this.OK_btn.Click += new System.EventHandler(this.OK_btn_Click);
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.button1.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.button1.ForeColor = System.Drawing.Color.Red;
+            this.button1.Location = new System.Drawing.Point(666, 347);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(106, 38);
+            this.button1.TabIndex = 60;
+            this.button1.Text = "削除";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
             // EmployeeRegisterUpdate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 411);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.OK_btn);
             this.Controls.Add(this.Back_btn);
             this.Controls.Add(this.panel1);
@@ -162,5 +176,6 @@
         private System.Windows.Forms.TextBox Password_tb;
         private System.Windows.Forms.Button Back_btn;
         private System.Windows.Forms.Button OK_btn;
+        private System.Windows.Forms.Button button1;
     }
 }

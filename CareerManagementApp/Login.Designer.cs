@@ -1,4 +1,6 @@
-﻿namespace CareerManagementApp
+﻿using System.Windows.Forms;
+
+namespace CareerManagementApp
 {
     partial class Login
     {
@@ -112,7 +114,6 @@
             this.ClientSize = new System.Drawing.Size(784, 411);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
-            this.MaximizeBox = false;
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ログイン";

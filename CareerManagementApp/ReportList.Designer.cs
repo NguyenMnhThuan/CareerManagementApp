@@ -48,7 +48,6 @@
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.Delete_btn = new System.Windows.Forms.Button();
             this.Update_btn = new System.Windows.Forms.Button();
             this.Register_btn = new System.Windows.Forms.Button();
             this.tableLayoutPanel10.SuspendLayout();
@@ -258,26 +257,12 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.Controls.Add(this.Delete_btn);
             this.panel1.Controls.Add(this.Update_btn);
             this.panel1.Controls.Add(this.Register_btn);
             this.panel1.Location = new System.Drawing.Point(1254, 45);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(116, 702);
             this.panel1.TabIndex = 23;
-            // 
-            // Delete_btn
-            // 
-            this.Delete_btn.BackColor = System.Drawing.Color.SteelBlue;
-            this.Delete_btn.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.Delete_btn.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.Delete_btn.Location = new System.Drawing.Point(5, 302);
-            this.Delete_btn.Name = "Delete_btn";
-            this.Delete_btn.Size = new System.Drawing.Size(106, 53);
-            this.Delete_btn.TabIndex = 5;
-            this.Delete_btn.Text = "削除";
-            this.Delete_btn.UseVisualStyleBackColor = false;
-            this.Delete_btn.Click += new System.EventHandler(this.Delete_btn_Click);
             // 
             // Update_btn
             // 
@@ -341,7 +326,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button Update_btn;
         private System.Windows.Forms.Button Register_btn;
-        private System.Windows.Forms.Button Delete_btn;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;

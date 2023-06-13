@@ -28,18 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
             this.Back_btn = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.Update_btn = new System.Windows.Forms.Button();
-            this.Delete_btn = new System.Windows.Forms.Button();
             this.Register_btn = new System.Windows.Forms.Button();
             this.Email_btn = new System.Windows.Forms.Button();
             this.Reset_btn = new System.Windows.Forms.Button();
@@ -60,7 +59,7 @@
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.UpdateDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.最終経歴の終了日 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel10.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Employee_dgv)).BeginInit();
@@ -116,7 +115,6 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.Controls.Add(this.Update_btn);
-            this.panel1.Controls.Add(this.Delete_btn);
             this.panel1.Controls.Add(this.Register_btn);
             this.panel1.Controls.Add(this.Email_btn);
             this.panel1.Location = new System.Drawing.Point(1254, 43);
@@ -137,19 +135,6 @@
             this.Update_btn.UseVisualStyleBackColor = false;
             this.Update_btn.Click += new System.EventHandler(this.Update_btn_Click);
             // 
-            // Delete_btn
-            // 
-            this.Delete_btn.BackColor = System.Drawing.Color.SteelBlue;
-            this.Delete_btn.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.Delete_btn.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.Delete_btn.Location = new System.Drawing.Point(4, 310);
-            this.Delete_btn.Name = "Delete_btn";
-            this.Delete_btn.Size = new System.Drawing.Size(106, 53);
-            this.Delete_btn.TabIndex = 14;
-            this.Delete_btn.Text = "削除";
-            this.Delete_btn.UseVisualStyleBackColor = false;
-            this.Delete_btn.Click += new System.EventHandler(this.Delete_btn_Click);
-            // 
             // Register_btn
             // 
             this.Register_btn.BackColor = System.Drawing.Color.SteelBlue;
@@ -168,7 +153,7 @@
             this.Email_btn.BackColor = System.Drawing.Color.SteelBlue;
             this.Email_btn.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.Email_btn.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.Email_btn.Location = new System.Drawing.Point(5, 553);
+            this.Email_btn.Location = new System.Drawing.Point(5, 310);
             this.Email_btn.Name = "Email_btn";
             this.Email_btn.Size = new System.Drawing.Size(106, 53);
             this.Email_btn.TabIndex = 15;
@@ -204,22 +189,22 @@
             // 
             // Employee_dgv
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Silver;
-            this.Employee_dgv.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.Silver;
+            this.Employee_dgv.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.Employee_dgv.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Employee_dgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.Employee_dgv.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.Employee_dgv.BackgroundColor = System.Drawing.Color.White;
             this.Employee_dgv.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Gainsboro;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Employee_dgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Employee_dgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.Employee_dgv.ColumnHeadersHeight = 55;
             this.Employee_dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.Employee_dgv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -229,15 +214,15 @@
             this.Column8,
             this.Column9,
             this.Column10,
-            this.UpdateDate});
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("MS UI Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.Employee_dgv.DefaultCellStyle = dataGridViewCellStyle4;
+            this.最終経歴の終了日});
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("MS UI Gothic", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.Employee_dgv.DefaultCellStyle = dataGridViewCellStyle10;
             this.Employee_dgv.EnableHeadersVisualStyles = false;
             this.Employee_dgv.GridColor = System.Drawing.Color.Gray;
             this.Employee_dgv.Location = new System.Drawing.Point(113, 177);
@@ -245,19 +230,19 @@
             this.Employee_dgv.MultiSelect = false;
             this.Employee_dgv.Name = "Employee_dgv";
             this.Employee_dgv.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Employee_dgv.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Employee_dgv.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.Employee_dgv.RowHeadersVisible = false;
             this.Employee_dgv.RowHeadersWidth = 50;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.Employee_dgv.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("MS UI Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.Employee_dgv.RowsDefaultCellStyle = dataGridViewCellStyle12;
             this.Employee_dgv.RowTemplate.Height = 24;
             this.Employee_dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.Employee_dgv.Size = new System.Drawing.Size(1139, 472);
@@ -376,10 +361,10 @@
             // 
             // Column1
             // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Gainsboro;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.Column1.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("MS UI Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.Column1.DefaultCellStyle = dataGridViewCellStyle9;
             this.Column1.HeaderText = "社員ID";
             this.Column1.MinimumWidth = 6;
             this.Column1.Name = "Column1";
@@ -414,10 +399,10 @@
             this.Column10.MinimumWidth = 6;
             this.Column10.Name = "Column10";
             // 
-            // UpdateDate
+            // 最終経歴の終了日
             // 
-            this.UpdateDate.HeaderText = "更新日付";
-            this.UpdateDate.Name = "UpdateDate";
+            this.最終経歴の終了日.HeaderText = "更新日付";
+            this.最終経歴の終了日.Name = "最終経歴の終了日";
             // 
             // Employee
             // 
@@ -466,7 +451,6 @@
         private System.Windows.Forms.Button Reset_btn;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button Update_btn;
-        private System.Windows.Forms.Button Delete_btn;
         private System.Windows.Forms.Button Personal_btn;
         private System.Windows.Forms.Button Report_btn;
         private System.Windows.Forms.Button Sending_btn;
@@ -478,6 +462,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn UpdateDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 最終経歴の終了日;
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -16,7 +17,7 @@ namespace CareerManagementApp
         public string id = "";
         public string author;
         public string pattern = "";
-        public static string connectString = ConnectString.connectString;
+        public static string connectString = ConfigurationManager.AppSettings["SqlServerAddress"];
         public Menu(string account, string authority = "一般")
         {
             InitializeComponent();

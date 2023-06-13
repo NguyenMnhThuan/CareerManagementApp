@@ -8,6 +8,7 @@ using System.IO;
 using System.Data.SqlClient;
 using System.Data;
 using System.Collections.Generic;
+using System.Configuration;
 
 namespace CareerManagementApp
 {
@@ -18,7 +19,7 @@ namespace CareerManagementApp
         string author = string.Empty;
         string newFilePath = string.Empty;
         string CareerName = string.Empty;
-        public static string connectString = ConnectString.connectString;
+        public static string connectString = ConfigurationManager.AppSettings["SqlServerAddress"];
         public PersonalCareer(string requestID, string authority)
         {
             InitializeComponent();
@@ -35,7 +36,7 @@ namespace CareerManagementApp
 
         private void PersonalCareer_Load(object sender, EventArgs e)
         {
-            LoadCareerData();
+            //LoadCareerData();
             BackColor = Color.White;
             BackgroundImage = FormDesign.CreateRainbowBackground(Width, Height);
             BackgroundImageLayout = ImageLayout.Stretch;
@@ -54,7 +55,6 @@ namespace CareerManagementApp
                 school1_lb.Text = "ECCコンピュータ専門学校";
                 enroll1_lb.Text = "2020/04/01";
                 graduate1_lb.Text = "2023/03/10";
-                diploma1_lb.Text = "基本情報技術者試験ー午前";
                 remarks_lb.Text = "新大阪駅～心斎橋駅10分、歩いてフルタニ産業まで10分";
             }
         }
@@ -293,7 +293,7 @@ namespace CareerManagementApp
                 saveFileDialog.Title = "PDFファイルを保存する場所を選ぶ？";
                 saveFileDialog.DefaultExt = "pdf"; // Định dạng mặc định là PDF
                 saveFileDialog.Filter = "PDF Files (*.pdf)|*.pdf"; // Bộ lọc chỉ hiển thị tệp PDF
-                string excelFilePath = "C:/Users/nguyen-minh-thuan/Desktop/経歴書テンプレート.xls";
+                string excelFilePath = ConfigurationManager.AppSettings["ExcelDirectory"];
                 string pdfFilePath = "";
                 string value1 = furigana_lb.Text;
                 string value2 = name_lb.Text;
@@ -442,6 +442,9 @@ namespace CareerManagementApp
             }
         }
 
+        private void Career_dgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
+        }
     }
 }
